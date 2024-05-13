@@ -1,5 +1,6 @@
 # Expense Splitter
 
+Ever had those moments after a fun day out where you're stuck trying to figure out who owes what? Yeah, been there, done that. So, I decided to put an end to the madness by creating Expense Splitter.
 Expense Splitter is a Flask web application designed to help groups of friends evenly split expenses incurred during outings or events. With Expense Splitter, users can input the number of friends, their names, and the expenses they've incurred. The application then calculates how much each friend needs to pay or receive to balance the expenses.
 
 ## Features
