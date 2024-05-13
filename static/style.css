@@ -1,0 +1,75 @@
+body {
+    font-family: "Merriweather", serif;
+    font-weight: 500;
+    margin-bottom: 50px;
+    background-image: url("../static/assets/background.png"); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.main-head {
+    font-weight: 800;
+    font-size: 3rem;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+input[type="text"], input[type="number"], .how-it-is-used-box {
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(5px); 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.list-group-item {
+    background: rgba(255, 255, 255, 0.7); 
+    border-radius: 5px; 
+    margin-top: 5px; 
+    padding: 10px; 
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+.input-group input[type="text"], 
+.input-group input[type="number"] {
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.input-group button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.result p {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+    .container-lg {
+        max-width: 98%;
+    }
+}
