@@ -11,9 +11,9 @@ Expense Splitter is a Flask web application designed to help groups of friends e
 
 ## Usage
 
-1. **Clone the Repository**: Clone this repository to your local machine using the following command: git clone https://github.com/mirdanish6594/Expense-Splitter.git
+1. **Clone the Repository**: Clone this repository to your local machine using the following command: `git clone https://github.com/mirdanish6594/Expense-Splitter.git`
 
-2. **Install Dependencies**: Navigate to the project directory and install the required dependencies using: pip install -r requirements.txt
+2. **Install Dependencies**: Navigate to the project directory and install the required dependencies using: `pip install -r requirements.txt`
 
 3. **Run the Application**: Start the Flask application by running: python app.py
 The application will be accessible at `http://localhost:5000` in your web browser.
