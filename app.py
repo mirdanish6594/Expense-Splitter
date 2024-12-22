@@ -40,4 +40,4 @@ def calculate():
     return render_template('result.html', results=results, total_expenses=total_expenses, avg_expense=avg_expense)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
