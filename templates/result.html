@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter - Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4 main-head">Expense Splitter-Result</h2>
+        <div class="card how-it-is-used-box">
+            <div class="card-body">
+                <h5 class="card-title">Result:</h5>
+                <ul class="list-group">
+                    {% for result in results %}
+                    <li class="list-group-item">{{ result }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!-- Total expenditure and contribution -->
+        <div class="mt-4">
+            <p>Total expenditure of the group: ₹{{ total_expenses }}</p>
+            <p>Each member has to contribute: ₹{{ avg_expense }}</p>
+        </div>
+        <a href="/" class="btn btn-primary mt-3">Back to Home</a>
+    </div>
+</body>
+
+</html>

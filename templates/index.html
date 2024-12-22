@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container-lg mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <h1 class="mb-4 text-center main-head">Expense Splitter</h1>
+                <p class="lead">Expense Splitter helps you easily split expenses among your friends after an outing,
+                    trip, or any shared activity.</p>
+                <div class="card mb-4 how-it-is-used-box">
+                    <div class="card-body">
+                        <h5 class="card-title">How it is used:</h5>
+                        <ol class="list-group list-group-flush">
+                            <li class="list-group-item">Enter the number of friends and their names.</li>
+                            <li class="list-group-item">For each friend, enter their respective expenses.</li>
+                            <li class="list-group-item">Click the "Calculate" button to see the results.</li>
+                            <li class="list-group-item">The results will show how much each friend needs to pay or
+                                receive to balance the expenses.</li>
+                        </ol>
+                    </div>
+                </div>
+                <form action="/calculate" method="post">
+                    <div class="form-group">
+                        <label for="num_friends">Number of People:</label>
+                        <input type="number" class="form-control" id="num_friends" name="num_friends" min="1" required>
+                    </div>
+                    <!-- Repeat this div for each friend -->
+                    <div class="form-group" id="friends_input">
+                        <label for="name_1">Person 1:</label>
+                        <input type="text" class="form-control" id="name_1" name="name_1" required>
+                        <label for="expense_1">Expense:</label>
+                        <input type="number" class="form-control" id="expense_1" name="expense_1" step="0.01" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="add_friend">Add Person</button>
+                    <button type="submit" class="btn btn-success">Calculate</button>
+                </form>
+            </div>
+
+            <script>
+                document.getElementById('add_friend').addEventListener('click', function () {
+                    const numFriends = document.querySelectorAll('[id^="name_"]').length + 1;
+                    const friendsInput = document.getElementById('friends_input');
+                    const newDiv = document.createElement('div');
+                    newDiv.className = 'form-group';
+                    newDiv.innerHTML = `
+                <label for="name_${numFriends}">Person ${numFriends}:</label>
+                <input type="text" class="form-control" id="name_${numFriends}" name="name_${numFriends}" required>
+                <label for="expense_${numFriends}">Expense:</label>
+                <input type="number" class="form-control" id="expense_${numFriends}" name="expense_${numFriends}" step="0.01" required>
+            `;
+                    friendsInput.appendChild(newDiv);
+                });
+            </script>
+</body>
+
+</html>
